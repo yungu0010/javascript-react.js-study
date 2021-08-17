@@ -121,3 +121,26 @@ console.log(mixed.color); //blue
 console.log(mixed.size);  //big
 //assign은 순차적으로 덮어씌움
 
+
+// Bonus!
+function getObj() {
+    const name = "crong";
+    const getName = function() {
+        return name;
+    }
+    const setName = function(newname){
+        name = newname;
+    }
+    const printName = function() {
+        console.log(name);
+    }
+    return {
+        // getName : getName, 
+        // setName : setName
+        // key와 value값이 같으면 생략 가능
+        getName, setName, name
+    }
+}
+
+let obj = getObj();
+console.log(obj);

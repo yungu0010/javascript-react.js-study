@@ -28,9 +28,10 @@ age = 4;
 var age;
 ​
 
-//3. Constant(값이 절대 바뀌지 않음, 포인터가 잠겨있음), r(read only)
+//3. Constant(값이 절대 바뀌지 않음, 재할당 불가 포인터가 잠겨있음), r(read only)
 //use const whenever possible
 //only use let if variable needs to change
+// const를 사용하더라도 배열과 오브젝트의 값을 변경하는 것은 가능하다.
 
 const daysInWeek = 7;
 const maxNumber = 5;
@@ -75,6 +76,15 @@ console.log(`value: ${greeting}, type: ${typeof greeting}`);
 const helloBob = `hi ${brendan}!`; //templete literals (string)
 console.log(`value: ${helloBob}, type: ${typeof helloBob}`);
 console.log('value: ' + helloBob + ' type: ' + typeof helloBob)
+
+// ES2015 new string methods.
+
+let str = "hello world !";
+let matchstr = "hello";
+console.log(str.startsWith(matchstr));
+console.log(str.endsWith(matchstr));
+console.log(str.includes(matchstr));
+
 ​
 //boolean
 //false: 0, null, undefined, NaN, ''

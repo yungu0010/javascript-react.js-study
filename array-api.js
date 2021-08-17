@@ -1,6 +1,6 @@
 
-// Q1. make a string out of an array
-{
+  // Q1. make a string out of an array
+  {
     const fruits = ['apple', 'banana', 'orange'];
     const result = fruits.join('|');
     console.log(result);
@@ -103,3 +103,18 @@
       .join();   
       console.log(result);
   }
+
+  // Bonus! 
+  function print() {
+    /*
+    filter, includes, from을 사용해서 문자열 'e'가 포함된 배열을 만들어서 반환하기
+    */
+   let listArray = Array.from(arguments);
+   console.log(toString.call(listArray));
+   let resultArray = listArray.filter(function(value){
+     return value.includes("e");
+   });
+   console.log(resultArray.length);
+  }
+
+  print("orange", "apple", "banana", "stawberry");

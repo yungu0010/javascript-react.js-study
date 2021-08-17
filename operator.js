@@ -166,6 +166,7 @@ for (let i = 3; i > 0; i = i - 2){
     console.log(`inline variable for: ${i}`);
 }
 
+
 //nested loops, O(n^2)이므로 CPU에 좋지 않음
 for (let i = 0; i < 10; i++){
     for (let j = 0; j < 10; j++){
