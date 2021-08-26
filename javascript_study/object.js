@@ -122,6 +122,41 @@ console.log(mixed.size);  //big
 //assign은 순차적으로 덮어씌움
 
 
+// 8. prototype : 같은 객체 생성자 함수를 사용하는 경우, 특정 함수 및 값을 재사용할 수 있음
+function Animal(type, name, sound) {
+    this.type = type;
+    this.name = name;
+    this.sound = sound;
+  }
+  
+  Animal.prototype.say = function() {
+    console.log(this.sound);
+  };
+  Animal.prototype.sharedValue = 1;
+  
+  function Dog(name, sound) {
+    // 첫번째 인자는 this, 이후에는 생성자 함수에서 필요로 하는 파라미터 적어줌
+    Animal.call(this, '개', name, sound);
+  }
+  Dog.prototype = Animal.prototype;
+  
+  function Cat(name, sound) {
+    Animal.call(this, '고양이', name, sound);
+  }
+  Cat.prototype = Animal.prototype;
+  
+  // Animal.Call 호출
+  const dog = new Dog('멍멍이', '멍멍');
+  const cat = new Cat('야옹이', '야옹');
+  
+  dog.say();
+  cat.say();
+  
+  console.log(dog.sharedValue);     //같은 프로토타입 공유
+  console.log(cat.sharedValue);
+
+
+
 // Bonus!
 function getObj() {
     const name = "crong";
