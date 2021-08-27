@@ -47,6 +47,7 @@ function pickAllFruits() {
     );
 }
 
+// Promise.race : 가장 먼저 끝난 하나의 결과값만 가져옴
 pickAllFruits().then(console.log);
 
 function pickOnlyOne() {

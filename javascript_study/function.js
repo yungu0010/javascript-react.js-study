@@ -54,6 +54,15 @@ function printAll(...args) { //배열처럼 인식
 }
 printAll('study', 'javascript', 'and', 'node');
 
+// in array
+const numbers = [0, 1, 2, 3, 4, 5, 6];
+
+const [one, ...rest] = numbers;
+
+console.log(one);
+console.log(rest);
+// const [ ...rest, last] = numbers는 불가
+
 
 // 5. Local scope
 // 밖에서는 안이 보이지 않고 안에서만 밖을 볼 수 있다.

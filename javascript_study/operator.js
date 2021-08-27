@@ -144,6 +144,21 @@ switch (browser) {
         break;
 }
 
+// switch-case 수정, 값에 따라 실행해야하는 코드 구문이 다를 경우에는 객체에 함수를 지정하면 됨
+function getBrowser(browser){
+    const chat = {
+        IE : 'go away!',
+        Chrome : 'love you!',
+        Firefox : 'love you!',
+        Safari: 'love you!'
+    };
+    return chat[browser] || 'save all!';
+}
+
+console.log(getBrowser('Chrome'));
+console.log(getBrowser('internet'));
+
+
 
 // 11. Loops
 // while loop, while the condition is truthy,

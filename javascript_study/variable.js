@@ -20,9 +20,10 @@ console.log(name);
 console.log(globalName);
 ​
 //var (don't ever use this!)
-//var hoisting(끌어올리다) (move declaration from bottom to top)
+//var hoisting(끌어올리다) (move declaration from bottom to top) ->  ESLint 사용해서 발견
 //=> 어디에 선언했냐에 상관없이 항상 제일 위로 선언을 끌어올려주는 것
-//has no block scope
+//has no block scope, function scope
+
 console.log(age);
 age = 4;
 var age;
@@ -118,7 +119,62 @@ console.log(`value: ${symbol1.description}, type: ${typeof symbol1}`);
 //object, real-life object, data structure
 const ellie = { lastname: 'ellie', age: 20 }; //const keyword 포인터 잠겨있어서 할당 불가
 ellie.age = 21; //ellie.사용하면 다른 값 할당 가능
-​
+
+// False & Truthy
+// falsy한 값 앞에 느낌표를 붙여주면 true로 전환됨.
+function print(person) {
+    if (!person) {   //if (person === undefined || person === null)
+      console.log('person이 없네요');
+      return;
+    }
+    console.log(person.name);
+}
+const person = null;
+print(person);
+  
+// Falsy value
+console.log(!undefined);
+console.log(!null);
+console.log(!0);
+console.log(!'');
+console.log(!NaN);      //Not A Number
+
+// apply -> operator.js 참조
+// A && B falsy에서 종료
+const dog = {
+    name: '멍멍이'
+  };
+  
+  function getName(animal) {
+    return animal && animal.name;
+  }
+  
+const name = getName(dog);
+console.log(name); // 멍멍이
+
+console.log(true && 'hello'); // hello
+console.log(false && 'hello'); // false
+console.log('hello' && 'bye'); // bye
+console.log(null && 'hello'); // null
+console.log(undefined && 'hello'); // undefined
+console.log('' && 'hello'); // ''
+console.log(0 && 'hello'); // 0
+console.log(1 && 'hello'); // hello
+console.log(1 && 1); // 1
+
+// A || B : truthy 찾으면 종료
+const namelessDog = {
+    name: ''
+  };
+  
+  function getName(animal) {
+    const name = animal && animal.name;
+    return name || '이름이 없는 동물입니다.';
+  }
+  
+const name = getName(namelessDog);
+console.log(name); // 이름이 없는 동물입니다.
+
 
 //5. Dynamic typing: dynamically typed language, runtime시 type정함
 let text = 'hello';

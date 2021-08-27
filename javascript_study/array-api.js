@@ -154,6 +154,13 @@ let sum3 = num.reduce((accumulator, current, index, array) => {
 console.log(sum3);
 
 
+// 13. includes
+const isAnimal = name => ['고양이', '개', '거북이', '너구리'].includes(name);
+
+console.log(isAnimal('개')); // true
+console.log(isAnimal('노트북')); // false
+
+
 
 // Q1. make a string out of an array
 {

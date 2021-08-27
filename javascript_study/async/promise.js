@@ -4,6 +4,8 @@
 // state: pending -> fulfilled or rejected
 // Producer vs Consumer
 
+// successed : resolve, failed : reject
+
 // 1. Producer
 // when new Promise is created, the executor runs automatically.
 // 만약 execute 내에 네트워크 통신 요청이 있다면 사용자가 요청하지 않아도 실행되기 때문에 유의
